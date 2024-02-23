@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Bootstrap demo</title>
+        <title>Posts</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -32,7 +32,7 @@
                             <a
                                 class="nav-link active"
                                 aria-current="page"
-                                href="#"
+                                href="{{ route('posts.index') }}"
                                 >Posts</a
                             >
                         </li>
@@ -62,7 +62,11 @@
                     <td>{{ $post["posted_by"] }}</td>
                     <td>{{ $post["created_at"] }}</td>
                     <td>
-                        <a href="#" class="btn btn-info">View</a>
+                        <a
+                            href="{{ route('posts.show', $post['id']) }}"
+                            class="btn btn-info"
+                            >View</a
+                        >
                         <a href="#" class="btn btn-primary">Edit</a>
                         <a href="#" class="btn btn-danger">Delete</a>
                     </td>
